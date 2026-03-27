@@ -1,0 +1,34 @@
+{
+  "name": "statuspage-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Atlassian Statuspage — incident and status page management via AI agents",
+  "type": "module",
+  "main": "dist/traditional/index.js",
+  "scripts": {
+    "build": "tsup src/traditional/index.ts src/code-mode/index.ts --format esm --clean",
+    "test": "vitest run",
+    "start:traditional": "node dist/traditional/index.js",
+    "start:code-mode": "node dist/code-mode/index.js"
+  },
+  "keywords": ["mcp", "statuspage", "incident", "status", "monitoring"],
+  "author": "cheenu1092-oss",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheenu1092-oss/statuspage-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cheenu1092-oss/statuspage-mcp-server/issues"
+  },
+  "homepage": "https://github.com/cheenu1092-oss/statuspage-mcp-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  }
+}

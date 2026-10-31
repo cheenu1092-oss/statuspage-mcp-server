@@ -74,7 +74,7 @@ server.registerTool(
       endpoint: z.string().describe("API endpoint (e.g., pages/{page_id}/incidents)"),
       body: z.unknown().optional().describe("Request body for POST/PATCH"),
       params: z
-        .record(z.string())
+        .record(z.string(), z.string())
         .optional()
         .describe("Query parameters for GET"),
     },

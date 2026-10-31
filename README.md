@@ -81,6 +81,38 @@ Or add to your MCP client config:
 npm run start:code-mode
 ```
 
+### Docker
+
+```bash
+docker build -t statuspage-mcp-server .
+```
+
+MCP client config (stdio):
+
+```json
+{
+  "mcpServers": {
+    "statuspage": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "-e", "STATUSPAGE_API_KEY",
+        "-e", "STATUSPAGE_PAGE_ID",
+        "-e", "STATUSPAGE_ENABLE_WRITE",
+        "statuspage-mcp-server"
+      ],
+      "env": {
+        "STATUSPAGE_API_KEY": "your-api-key",
+        "STATUSPAGE_PAGE_ID": "your-page-id",
+        "STATUSPAGE_ENABLE_WRITE": "true"
+      }
+    }
+  }
+}
+```
+
+For code mode, append `node dist/code-mode/index.js` after the image name.
+
 ## Example Prompts
 
 **Read-only operations (always available):**
